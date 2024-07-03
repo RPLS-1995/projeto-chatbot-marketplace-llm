@@ -30,11 +30,18 @@ def get_response_from_openai(messages):
 
 
 # Configurar a interface do Streamlit
-st.title("Chatbot Vendedor de Eletrônicos")
+st.set_page_config(page_title="Chatbot, o seu vendedor de Eletrônicos do Marketplace", page_icon="🤖")
+st.title("🤖 Chatbot Vendedor de Eletrônicos")
 
 # Histórico da conversa
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "system", "content": initial_prompt}]
+
+# Layout da página
+st.sidebar.header("Opções")
+if st.sidebar.button("Limpar Conversa"):
+    st.session_state.messages = [{"role": "system", "content": initial_prompt}]
+    st.rerun()
 
 # Input do usuário
 user_input = st.text_input("Você:", key="user_input")
@@ -59,4 +66,5 @@ if st.button("Enviar"):
 # Botão para sair
 if st.button("Sair"):
     st.write("Vendedor (Bot): Até mais! Volte sempre!")
+    st.session_state.messages = [{"role": "system", "content": initial_prompt}]
     st.stop()
