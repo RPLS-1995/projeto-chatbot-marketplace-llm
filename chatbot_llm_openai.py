@@ -3,6 +3,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 import prompts
+import styles
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -33,6 +34,9 @@ def get_response_from_openai(messages):
 st.set_page_config(page_title="Chatbot, o seu vendedor de Eletrônicos do Marketplace", page_icon="🤖")
 st.title("🤖 Chatbot Vendedor de Eletrônicos")
 
+# Injetar CSS para personalização
+st.markdown(styles.CSS_STYLES, unsafe_allow_html=True)
+
 # Histórico da conversa
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "system", "content": initial_prompt}]
@@ -44,7 +48,7 @@ if st.sidebar.button("Limpar Conversa"):
     st.rerun()
 
 # Input do usuário
-user_input = st.text_input("Você:", key="user_input")
+user_input = st.text_input("Digite aqui...", key="user_input")
 
 # Botão para enviar a mensagem
 if st.button("Enviar"):
