@@ -4,6 +4,8 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import prompts
 import styles
+import csv
+import base64
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -43,9 +45,32 @@ if "messages" not in st.session_state:
 
 # Layout da página
 st.sidebar.header("Opções")
-if st.sidebar.button("Limpar Conversa"):
+if st.sidebar.button("Reiniciar Chatbot"):
     st.session_state.messages = [{"role": "system", "content": initial_prompt}]
     st.rerun()
+
+# Botão para fazer download das mensagens
+if st.sidebar.button("Baixar Mensagens"):
+    # Definir nome do arquivo de saída
+    file_name = "mensagens.csv"
+
+    # Salvar as mensagens em um arquivo CSV
+    with open(file_name, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Role", "Content"])  # Cabeçalho do CSV
+        for message in st.session_state.messages:
+            if message != st.session_state.messages[0]:
+                writer.writerow([message["role"], message["content"]])
+
+    # Gerar link para download do arquivo CSV
+    with open(file_name, "rb") as f:
+        csv_bytes = f.read()
+        b64 = base64.b64encode(csv_bytes).decode()
+        href = f'<a href="data:file/csv;base64,{b64}" download="{file_name}">Clique aqui para baixar</a>'
+        st.markdown(href, unsafe_allow_html=True)        
+
+    # Mensagem de sucesso e link para download
+    st.success("Mensagens exportadas com sucesso!")
 
 # Input do usuário
 user_input = st.text_input("Digite aqui...", key="user_input")

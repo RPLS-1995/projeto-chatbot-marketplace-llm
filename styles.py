@@ -27,7 +27,7 @@ CSS_STYLES = """
         font-size: 20px; /* Texto maior na entrada de texto */
         width: 100%; /* Largura maior na entrada de texto */
         padding: 15px; /* Espaçamento interno para melhor usabilidade */
-        box-sizing: border-box; /* Garantir que padding seja incluído na largura total */
+        box-sizing: border-box;
     }
 
     /* Estilizando o título */
