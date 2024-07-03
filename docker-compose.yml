@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  chatbot_llm:
+  chatbot_llm_openai:
     build: .
     ports:
       - "8080:8080"
