@@ -1,0 +1,6 @@
+transformers
+sentencepiece
+streamlit
+torch==2.3.0 --index-url https://download.pytorch.org/whl/cpu
+torchvision==0.18.0 --index-url https://download.pytorch.org/whl/cpu
+torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cpu
