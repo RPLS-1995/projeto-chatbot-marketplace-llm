@@ -88,6 +88,7 @@ Como exemplo, uma delas exigia o uso de bibliotecas cujo import levava minutos p
 não encontrar nenhum produto no catálogo. A solução foi acrescentar no prompt inicial sinônimos dos produtos disponíveis no Marketplace e exigir que a LLM fizesse a relação entre eles.
 - A possibilidade de configurar mais parâmetros na LLM, que possam garantir respostas mais precisas ao cliente em um intervalo menor de tempo.
 - A adição de arquivos executáveis (.exe), para que o Chatbot possa ser executado em diferentes Sistemas Operacionais sem a necessidade de seguir tutoriais de instalação.
+- A utilização de CI/CD, especialmente para uso de variáveis de ambiente. Devido a horário de trabalho não foi possível configurar o CI/CD de forma apropriada, logo essa implementação está sem o seu uso.
 
 
 
