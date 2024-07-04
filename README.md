@@ -50,5 +50,29 @@ Na sequência, o Chatbot irá capturar a mensagem e, baseando-se no seu conteúd
 ![image](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/6c5eaf06-046c-4a4a-a964-725af10142b1)
 
 Após a resposta o cliente poderá digitar outra mensagem ao Chatbot, escolhendo um dos produtos e pedindo por mais detalhes ou adicionando-o ao carrinho. Essa interação de mensagens deve seguir até que o cliente
-conclua uma compra ou saia do Chatbot, o que pode ser feito em qualquer momento clicando no botão "Sair".
+conclua uma compra ou saia do Chatbot, o que pode ser feito em qualquer momento clicando no botão "Sair". Quando esse comando é executado, a mensagem abaixo é exibida e todas as informações obtidas pelo
+Chatbot na última conversa são perdidas.
+![image](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/f2ae0d03-e106-4ebe-be4e-23f9419fe66b)
+
+Os outros dois recursos estão disponíveis na barra lateral da aplicação Web. O primeiro é o botão que Reinicia o Chatbot, que deve ser usado caso o sistema não consiga mais responder adequadamente
+às perguntas feitas pelo cliente. Ao clicar no botão, as conversas são deletadas e o Chatbot é reiniciado.
+![image](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/367ef358-6d17-4bde-8945-f1ce052a3946)
+
+Já o segundo é o botão que permite baixar a transcrição da última conversa feita com o Chatbot em um arquivo .csv. Assim basta clicar nele que um link para download é disponibilizado na tela.
+![image](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/260d0872-61e4-4a69-8750-17e22b715210)
+
+![image](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/e3c26e0c-16bc-4bbd-b4eb-97ca8c04661e)
+
+![image](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/2e79b9a5-f9f6-408f-8bb3-27c0d8942896)
+
+## Pontos de melhoria ##
+Ao longo do desenvolvimento foram identificados vários pontos de melhoria, que foram implementados no sistema e que podem ser apeerfeiçoados. Dentre eles, temos:
+- A escolha da LLM, que provou ser desafiador tanto na capacidade de gerar boas respostas ao cliente como no uso de recursos computacionais.
+Como exemplo, uma delas exigia o uso de bibliotecas cujo import levava minutos para ser concluído.
+- A dificuldade da LLM de entender sinônimos. Ao longo dos testes verificou-se que o modelo não conseguia relacionar as palavras "Notebook" e "Computador" com Laptop, o que fazia o Chatbot
+não encontrar nenhum produto no catálogo. A solução foi acrescentar no prompt inicial sinônimos dos produtos disponíveis no Marketplace e exigir que a LLM fizesse a relação entre eles.
+- A possibilidade de configurar mais parâmetros na LLM, que possam garantir respostas mais precisas ao cliente em um intervalo menor de tempo.
+
+
+
 
