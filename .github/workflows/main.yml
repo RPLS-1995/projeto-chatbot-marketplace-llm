@@ -10,6 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    environment: production  # Especifica o ambiente para usar os secrets
+
     steps:
     - name: Check out the repository
       uses: actions/checkout@v2
@@ -26,6 +28,6 @@ jobs:
 
     - name: Run script with secret
       run: |
-        python chatbot_llm_openai.py
+        strealit run chatbot_llm_openai.py
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
