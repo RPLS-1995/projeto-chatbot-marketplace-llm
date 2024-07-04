@@ -1,1 +1,5 @@
 Role,Content
+user,"Boa noite, tem alguma TV disponível?"
+assistant,"Boa noite! Sim, temos a Smart TV VisionScreen 55"" 4K disponível por R$ 3.999,00. Gostaria de adicionar ao carrinho ou de mais informações sobre o produto?"
+user,"Sim, por favor adicione no carrinho."
+assistant,"A Smart TV VisionScreen 55"" 4K foi adicionada ao seu carrinho. O valor total é de R$ 3.999,00. Você deseja fechar a compra ou ver outro produto?"
