@@ -28,6 +28,6 @@ jobs:
 
     - name: Run script with secret
       run: |
-        streamlit run chatbot_llm_openai.py
+        python chatbot_llm_openai.py
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
