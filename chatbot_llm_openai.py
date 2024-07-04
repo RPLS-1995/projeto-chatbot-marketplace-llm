@@ -1,10 +1,14 @@
 import streamlit as st
 import os
 from openai import OpenAI
+from dotenv import load_dotenv
 import prompts
 import styles
 import csv
 import base64
+
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
 
 
 # Prompt inicial que define o comportamento do bot
