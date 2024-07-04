@@ -17,7 +17,7 @@ initial_prompt = prompts.SALE_RULES_PROMPT
 
 client = OpenAI(
     # This is the default and can be omitted
-    api_key=os.environ.get("OPENAI_API_KEY"),
+    api_key=os.getenv("OPENAI_API_KEY"),
 )
 
 
