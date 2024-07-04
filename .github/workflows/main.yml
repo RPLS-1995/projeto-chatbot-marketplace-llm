@@ -26,6 +26,6 @@ jobs:
 
     - name: Run script with secret
       run: |
-        python chatbot_llm_openai
+        python chatbot_llm_openai.py
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
