@@ -30,6 +30,7 @@ e garante mais estabilidade em suas execuções.
 Dessa vez os resultados foram muito superiores com a gpt-3.5-turbo e assim ela foi adotada para esse projeto.
 
 ## Como baixar e executar ##
+### Com Docker (Linux) ###
 Para este projeto os códigos foram implementados na linguagem Python (e revisados com flake8) e as execuções acontecem com o uso de Docker. O principal objetivo
 do Docker é garantir que o Chatbot possa ser executado em qualquer máquina, independente de sua configuração.
 Assim os passos para execução do Chatbot podem ser vistos abaixo:
@@ -41,6 +42,20 @@ Este comando fará que com as bibliotecas contidas no arquivo requirements.txt s
 Assim, abra uma página no navegador de sua preferência com a URL http://0.0.0.0:8080 e aguarde o Chatbot ser totalmente carregado.
 5. Caso o navegador exiba uma página Web similar a esta, significa que o Chatbot está pronto para uso! ![image](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/94b817a1-8120-42f6-8457-caed6700fbb0)
 
+### Sem Docker (Linux e Windows) ###
+1. Abra um terminal no computador e baixe o repositório usando o comando "git clone https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm.git"
+2. Abra uma IDE de sua preferência e entre na pasta do repositório clonado.
+3. Execute na sequência os comandos abaixo:
+   - python3 -m venv venv
+   - source venv/bin/activate (para máquinas Linux) ou venv\Scripts\activate (para máquinas Windows)
+   - pip3 install streamlit
+   - pip3 install openai
+   - pip3 install python-dotenv
+   - streamlit run chatbot_llm_openai.py
+4. Após executar o último comando, o terminal deve exibir essa mensagem: ![Captura de tela de 2024-07-04 11-23-02](https://github.com/RPLS-1995/projeto-chatbot-marketplace-llm/assets/174524067/ad6d9692-5196-476e-b113-a48195823af5)
+   Assim, abra uma página no navegador de sua preferência com a URL http://localhost:8501 e aguarde o Chatbot ser totalmente carregado.
+
+   
 ## Explorando o Chatbot ##
 Conforme especificação, o Chatbot irá trabalhar como vendedor de um Marketplace de eletrônicos, em que há 8 diferentes produtos à venda. Para iniciar a interação com o Chatbot, o cliente deve digitar suas perguntas
 e decisões no espaço mostrado abaixo e clicar no botão "Enviar".
@@ -72,6 +87,7 @@ Como exemplo, uma delas exigia o uso de bibliotecas cujo import levava minutos p
 - A dificuldade da LLM de entender sinônimos. Ao longo dos testes verificou-se que o modelo não conseguia relacionar as palavras "Notebook" e "Computador" com Laptop, o que fazia o Chatbot
 não encontrar nenhum produto no catálogo. A solução foi acrescentar no prompt inicial sinônimos dos produtos disponíveis no Marketplace e exigir que a LLM fizesse a relação entre eles.
 - A possibilidade de configurar mais parâmetros na LLM, que possam garantir respostas mais precisas ao cliente em um intervalo menor de tempo.
+- A adição de arquivos executáveis (.exe), para que o Chatbot possa ser executado em diferentes Sistemas Operacionais sem a necessidade de seguir tutoriais de instalação.
 
 
 
